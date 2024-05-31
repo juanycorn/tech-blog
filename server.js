@@ -2,7 +2,8 @@
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
-const exphbs = require('express-handlebars'); // Corrected import
+const exphbs = require('express-handlebars'); // Import express-handlebars
+
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sequelize = require('./config/connection');
@@ -26,8 +27,11 @@ const sess = {
 // Use session middleware
 app.use(session(sess));
 
+// Create an instance of Handlebars
+const hbs = exphbs.create({ /* options if any */ });
+
 // Set Handlebars.js as the template engine
-app.engine('handlebars', exphbs()); // Corrected initialization
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // Middleware to parse JSON and URL-encoded form data
