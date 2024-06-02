@@ -1,0 +1,9 @@
+<h1>Your Dashboard</h1>
+<button id="new-post">New Post</button>
+{{#each posts}}
+  <div class="post">
+    <h2><a href="/dashboard/edit/{{id}}">{{title}}</a></h2>
+    <p>Posted on {{createdAt}}</p>
+  </div>
+{{/each}}
+<script src="/js/post.js"></script>

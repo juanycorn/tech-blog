@@ -1,0 +1,14 @@
+{
+    "development": {
+      "username": "your_local_username",
+      "password": "your_local_password",
+      "database": "database_name",
+      "host": "localhost",
+      "dialect": "mysql"
+    },
+    "production": {
+      "use_env_variable": "DATABASE_URL",
+      "dialect": "mysql"
+    }
+  }
+  
